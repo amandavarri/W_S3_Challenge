@@ -234,16 +234,18 @@
       work(){
         this.ants.forEach(ant => ant.health -= 20)
 
+        let antsStarting = this.ants.length
+
         this.ants = this.ants.filter(ant => ant.health > 0)
 
-        if (this.ants.length <= 0){
+        if (antsStarting <= 0){
           
           return 'No ants here. Did you work them to death?'
           
         } else {
           
 
-          return `${this.ants.length} ants starting work!`
+          return `${antsStarting} ants starting work!`
         }
         
         
